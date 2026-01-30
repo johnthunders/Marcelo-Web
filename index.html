@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Nomads - Global Tech Jobs</title>
+    
+    <!-- FAVICON SVG CUSTOM (Actualizado) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='167' height='129' viewBox='0 0 167 129' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='167' height='129' fill='%231E1E1E'/%3E%3Cpath d='M27.8732 102V86.839H40.9766V41.356H27.8732V26.1951H72.1649V41.356H59.0615V86.839H72.1649V102H27.8732ZM114.489 102C109.868 102 105.789 100.989 102.252 98.9678C98.7863 96.8741 96.0429 94.0946 94.0215 90.6293C92.0722 87.1639 91.0975 83.3014 91.0975 79.0419V41.356H70.5219V26.1951H129.758V41.356H109.291V80.6663C109.291 82.3268 109.868 83.7707 111.023 84.998C112.179 86.2254 113.622 86.839 115.355 86.839H121.311V102H114.489Z' fill='white'/%3E%3C/svg%3E">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPGM2H6Q6N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JPGM2H6Q6N');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Babel para interpretar JSX en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #18181b; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0%   { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 320s linear infinite; 
+        }
+
+        /* Hide scrollbar for carousel but allow functionality */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Custom styles for rich text editor content */
+        .rich-text-content ul { list-style-type: disc; padding-left: 1.25rem; }
+        .rich-text-content ol { list-style-type: decimal; padding-left: 1.25rem; }
+        .rich-text-content h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .rich-text-content h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .rich-text-content h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .rich-text-content p { margin-bottom: 1rem; }
+        .rich-text-content a { color: #818cf8; text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 selection:bg-indigo-500/30 overflow-x-hidden">
+    <div id="root"></div>
+
+    <script type="text/babel" data-type="module" src="./script.js"></script>
+</body>
+</html>
