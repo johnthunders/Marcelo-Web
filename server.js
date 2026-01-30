@@ -6,6 +6,7 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static(__dirname));
 
 // Conexión a la base de datos
 // Usamos path.join para que no haya errores de rutas en Windows
@@ -45,8 +46,9 @@ app.post('/api/login', (req, res) => {
 });
 
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`>>> Servidor corriendo en http://localhost:${PORT}`);
-    console.log(`>>> Esperando peticiones de la web...`);
+// Configuración para el despliegue en Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`>>> Servidor corriendo en el puerto: ${PORT}`);
+    console.log(`>>> Esperando peticiones...`);
 });
